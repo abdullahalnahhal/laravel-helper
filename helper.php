@@ -1,12 +1,16 @@
 <?php
-
+/**
+ * Laravel Helper
+ * [General PHP Methods to make helper]
+ * @author Abdullah Alnahhal <abdullahalnahhal@gmail.com>
+ */
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 
 /**
- * user [fetches the current authenticated user]
+ * [user fetches the current authenticated user]
  * @return null|Users\Models\User
  */
 
@@ -21,7 +25,7 @@ function user()
 
 /**
  * [isGuardA checks if the guard is the given guard]
- * @param  String  $guardName [description]
+ * @param  String  $guardName [the guard name to check]
  * @return boolean
  */
 function isGuardA(String $guardName = 'web'):bool
@@ -85,7 +89,7 @@ function nameLogo(string $name):string
     return strtoupper($logo);
 }
 /**
- * [message return the api responses]
+ * [message returns the api responses]
  * @param  boolean $status  [status true success false for failure]
  * @param  array   $data    [object will be sent]
  * @param  string  $message [message will be sent]
@@ -103,10 +107,10 @@ function message($status = true, $data = [], $message = '', $code = 200)
 }
 /**
  * [colors returns random bootstrap color]
- * @param string $key [color key]
+ * @param int $key [color key]
  * @return string [bootstrap color]
  */
-function colors(string $key):string
+function colors(int $key = 6):string
 {
 
     $colors = [
@@ -203,7 +207,7 @@ function array_flatten(array $array):array
 
 /**
  * [trimAllSpaces removes all spaces from text]
- * @param string
+ * @param string $string [string wanted to be trimmed]
  * @return string
  */
 function trimAllSpaces(string $string):string
